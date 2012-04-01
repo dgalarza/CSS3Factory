@@ -1,0 +1,143 @@
+@import 'compass/css3/box-shadow';
+@import 'compass/css3/border-radius';
+@import 'compass/css3/font-face';
+@import 'compass/css3/transition';
+@import 'compass/css3/images';
+
+$red: #ce3927;
+$gray: #505050;
+
+$page-width: 1000px;
+$page-padding: 20px;
+
+$post-content-spacing: 30px;
+
+aside, section, article, time, nav {
+ display: block; 
+}
+
+h1,h2,h3,h4,h5 {
+  font-weight: normal;
+  font-family: "minion-pro";
+}
+
+body, html {
+  font-family: "freight-sans-pro";
+  background: #fefefe;
+  color: #505050;
+  height: 100%;
+  font-size: 18px;
+}
+
+code, pre {
+  font-family: 'inconsolata';
+}
+
+.code-block {
+  font-size: 14px;
+}
+
+input[type=text],
+input[type=password],
+input[type=url],
+input[type=email],
+textarea {
+  font-size: 14px;
+  font-family: "minion-pro";
+  color: $gray;
+  resize: none;
+  outline: none;
+  border: 1px solid #b3b3b3;
+  padding: 15px 0 10px 13px;
+  @include box-shadow(0 0 5px 0 #e1e1e1 inset);
+  @include transition(box-shadow 0.25s linear 0s);
+  &:focus { 
+    outline: 0 none;
+  }
+}
+
+input[type=text] {
+  height: 11px;
+}
+
+::selection { background: $red; color: #FFFFFF; }
+::-moz-selection { background: $red; color: #FFFFFF; }
+
+.alt-anchor,
+.alt-anchor:visited {
+  color: $gray;
+  &:hover { color: $red; }
+}
+
+#page {
+  min-height: 100%;
+  position: relative;
+}
+
+.wrapper {
+  width:  $page-width - ($page-padding * 2);
+  padding: 0 $page-padding;
+  margin: 0 auto;
+}
+
+a, a:visited {
+  color: $red;
+  text-decoration: none;
+  @include transition(color 0.35s linear 0s);
+}
+
+a:hover {
+  color: #505050;
+}
+
+.meridian {
+  text-transform: lowercase;
+}
+
+#page-wrapper {
+  padding-bottom: 140px;
+}
+
+// Footer
+.clear-footer {
+  height: 70px;
+  clear: both;
+}
+
+footer {
+  height: 70px;
+  color: #505050;
+  background: #eeeeee;
+  text-align: center;
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+footer .wrapper {
+  height: 70px;
+  overflow: hidden;
+}
+
+footer ul {
+  float: left;
+  padding-top: 28px;
+}
+
+footer li {
+  padding-right: 10px;
+  margin-right: 10px;
+  border-right: 1px solid #505050;
+  float: left;
+}
+
+footer li.last {
+  border-right: none;
+}
+
+footer .design-label {
+  padding-top: 28px;
+  float: right;
+}
