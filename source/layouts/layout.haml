@@ -27,6 +27,11 @@
     - if content_for?(:og_description)
       %meta{content: "#{yield_content(:og_description)}", property: "og:description"}/
 
+    - if content_for?(:og_image)
+      %meta{content: "http://www.css3factory.com#{yield_content(:og_image)}", property: "og:description"}/
+    - else
+      %meta{content: "http://www.css3factory.com#{image_path('og-factory.png')}", property: "og:description"}/
+
 
     %script{src: "http://use.typekit.com/hyh0moi.js", type: "text/javascript"}
     :javascript
