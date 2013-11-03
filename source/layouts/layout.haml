@@ -14,6 +14,20 @@
     - else
       %link{ rel: 'icon', type: 'image/png', href: '/factory.png' }
 
+    - if content_for?(:title)
+      %meta{content: "#{yield_content(:title)} | CSS3 Factory", property: "og:title"}/
+    - else
+      %meta{content: "CSS3 Factory", property: "og:title"}/
+
+    %meta{content: "website", property: "og:type"}/
+    %meta{content: "#{yield_content(:og_url)}", property: "og:url"}/
+    %meta{content: "CSS3 Factory", property: "og:site_name"}/
+    %meta{content: "57604055", property: "fb:admins"}/
+
+    - if content_for?(:og_description)
+      %meta{content: "#{yield_content(:og_description)}", property: "og:description"}/
+
+
     %script{src: "http://use.typekit.com/hyh0moi.js", type: "text/javascript"}
     :javascript
       try{Typekit.load();}catch(e){}
