@@ -252,7 +252,8 @@ select[name=color-format] {
 }
 
 .generated-code {
-  overflow: scroll;
+  overflow: auto;
+  padding: 10px 0;
 }
 
 #comments {
