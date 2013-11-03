@@ -4,16 +4,8 @@
 
   .ad-container.wrapper
     :plain
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <!-- Gradient Generator Header -->
-      <ins class="adsbygoogle"
-           style="display:inline-block;width:728px;height:90px"
-           data-ad-client="ca-pub-1749070472517546"
-           data-ad-slot="8475664483"></ins>
-      <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-
+      <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-1749070472517546" data-ad-slot="8475664483"></ins> 
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   .main-header.wrapper.clearfix
     %h1
       = link_to "/" do
@@ -44,15 +36,8 @@
     %h2 Gradient Generator
     .ad-container
       :plain
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Gradient Generator Small -->
-        <ins class="adsbygoogle"
-             style="display:inline-block;width:468px;height:60px"
-             data-ad-client="ca-pub-1749070472517546"
-             data-ad-slot="9952397682"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+        <ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px" data-ad-client="ca-pub-1749070472517546" data-ad-slot="9952397682"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
   .swatch-controls.control-box
     %h3 Color Swatches
@@ -119,6 +104,9 @@
 #comments
   #disqus_thread.wrapper
 
+- content_for :scripts do
+  = javascript_include_tag "gradient_generator"
+
   :plain
     <script type="text/javascript">
     var disqus_shortname = 'glrzad';
@@ -131,8 +119,5 @@
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    
 
-- content_for :scripts do
-  = javascript_include_tag "gradient_generator"
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
