@@ -44,9 +44,13 @@ class CSSFactory.classes.GradientGenerator
     @updateCode()
 
   updateSample: ->
-    $('#gradient-sample').css({
-      backgroundImage: @generateGradient()
-    })
+    $sample = $('#gradient-sample')
+    prefixedGradient = @_prefixedLinearVariant()
+
+    for prefix in GradientGenerator.vendorPrefixes
+      $sample.css backgroundImage: "-#{prefix}-#{prefixedGradient}"
+
+    $sample.css backgroundImage: @generateGradient()
 
   updateCode: ->
     code = "background-image: "
