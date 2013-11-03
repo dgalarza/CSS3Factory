@@ -2,7 +2,11 @@
 %html
   %head
     %meta{charset: "UTF-8"}/
-    %title CSS3 Factory
+    %title 
+      - if content_for?(:title)
+        = yield_content :title 
+        | 
+      CSS3 Factory
     %link{href: "/stylesheets/style.css", media: "screen", rel: "stylesheet", type: "text/css"}/
 
     - if content_for?(:favicon)
