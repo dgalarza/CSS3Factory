@@ -7,7 +7,9 @@
     %script{src: "http://use.typekit.com/hyh0moi.js", type: "text/javascript"}
     :javascript
       try{Typekit.load();}catch(e){}
+
   %body
+
     #page
       = yield
 
@@ -27,6 +29,11 @@
             Design by:
             %a.alt-anchor{href: "http://www.erinbermudez.com", target: "_blank"} Erin Bermudez
 
+    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
+    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"
+
+    = yield_content :scripts
+
     / END: Page
     :javascript
       var _gaq = _gaq || [];
@@ -38,3 +45,21 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
+
+    :plain
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=527200053984565";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <script type="text/javascript">
+        (function() {
+          var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+          po.src = 'https://apis.google.com/js/plusone.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+      </script>
