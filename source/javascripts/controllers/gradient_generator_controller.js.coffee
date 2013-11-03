@@ -113,5 +113,10 @@ class CSSFactory.GradientGeneratorController
       path: '/ZeroClipboard.swf'
       copy: ->
         $('.generated-code').text()
-      afterCopy: -> return false
+      afterCopy: ->
+        $('#code .copy-trigger').text('Copied!')
+        setTimeout ->
+          $('#code .copy-trigger').text('Copy')
+        , 1500
+
 
