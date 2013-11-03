@@ -1,10 +1,11 @@
 #site-header .ad-container {
+  margin-bottom: 25px;
   margin-top: 24px;
   width: 728px;
   height: 90px;
 }
 
-#site-header h2 {
+#site-header h1 {
   margin-top: 25px;
   float: left;
 
@@ -36,7 +37,6 @@
   float: left;
   font-size: 16px;
   line-height: 21px;
-  font-style: italic;
 }
 
 .welcome-message h2 {
@@ -50,7 +50,6 @@
 .callout .authors {
   color: $red;
   font-size: 16px;
-  font-style: italic;
 }
 
 .callout .book-image {
@@ -77,7 +76,7 @@
   float: right;
 }
 
-#generator-wrapper h1 {
+#generator-wrapper h2 {
   padding-left: 98px;
   float: left;
   height: 82px;

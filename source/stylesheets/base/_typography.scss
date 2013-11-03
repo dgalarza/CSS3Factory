@@ -1,6 +1,6 @@
 h1,h2,h3,h4,h5, h6 {
-  font-weight: normal;
-  font-family: "minion-pro",sans-serif;
+  font-weight: 300;
+  font-family: "freight-text-pro", serif;
 }
 
 h1 {
@@ -17,5 +17,4 @@ h3 {
 
 h4 {
   @include font_size(16);
-  font-style: italic;
 }
