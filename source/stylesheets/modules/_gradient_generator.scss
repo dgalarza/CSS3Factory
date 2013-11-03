@@ -29,7 +29,7 @@
 
 .welcome {
   padding: 10px 0;
-  margin-bottom: 25px;
+  margin-bottom: 55px;
   border: 1px solid #cdcdcd;
   border-style: solid none solid none;
   overflow: hidden;
@@ -225,6 +225,7 @@ select[name=color-format] {
   width: 20px;
   float: right;
   text-align: right;
+  margin-top: 3px;
 }
 
 #code {
