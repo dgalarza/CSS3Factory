@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem "middleman", "~>3.1.5"
+gem 'middleman-s3_sync'
+gem 'middleman-cloudfront'
 
 gem "middleman-livereload", "~> 3.1.0"
 
