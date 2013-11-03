@@ -5,22 +5,26 @@
   height: 90px;
 }
 
-#site-header h1 {
-  margin-top: 25px;
-  float: left;
+.linear-gradients {
 
-  img {
-    vertical-align: middle;
+  #site-header h1 {
+    margin-top: 25px;
+    float: left;
+
+    img {
+      vertical-align: middle;
+    }
   }
-}
 
-#site-header .social-wrapper {
-  float: right;
-  margin-top: 57px;
-}
+  #site-header .social-wrapper {
+    float: right;
+    margin-top: 57px;
+  }
 
-#site-header .fb-like {
-  margin-right: 20px;
+  #site-header .fb-like {
+    margin-right: 20px;
+  }
+
 }
 
 .welcome {
