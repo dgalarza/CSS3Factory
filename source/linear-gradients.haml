@@ -59,7 +59,7 @@
 
     #color-picker
 
-    #swatches-container
+    #swatches-container.clearfix
       %a.add-swatch-btn.add-swatch-trigger{ href: "#addColor" }
         Add
       %ul.swatch-list.clearfix
@@ -72,7 +72,7 @@
         %select{ name: 'color-format' }
           %option{ value: 'hex' } Hex
           %option{ value: 'rgb' } RGB
-        %p.notice * this selection will be remembered next time.
+        %p.notice *The selection will be remembered next time.
 
   .gradient-controls.control-box
     %h3 Gradient Sample

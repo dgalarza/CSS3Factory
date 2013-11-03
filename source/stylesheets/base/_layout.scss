@@ -3,7 +3,8 @@ aside, section, article, time, nav {
 }
 
 body, html {
-  font-family: "freight-sans-pro",sans-serif;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 300;
   background: #fefefe;
   color: #505050;
   height: 100%;
@@ -11,7 +12,7 @@ body, html {
 }
 
 code, pre {
-  font-family: 'inconsolata';
+  font-family: "source-code-pro";
 }
 
 .code-block {
@@ -23,9 +24,9 @@ input[type=password],
 input[type=url],
 input[type=email],
 textarea {
-  font-size: 14px;
-  font-family: "minion-pro",sans-serif;
-  color: $gray;
+  font-size: 12px;
+  font-family: "futura-pt", sans-serif;
+  color: #898989;
   resize: none;
   outline: none;
   border: 1px solid #b3b3b3;

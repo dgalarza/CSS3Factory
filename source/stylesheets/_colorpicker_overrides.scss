@@ -7,7 +7,13 @@
   user-select: none;
 }
 
-.colorpicker .colorpicker_hex input {
+.colorpicker .colorpicker_hex input,
+.colorpicker_rgb_r input, .colorpicker_rgb_g input, .colorpicker_rgb_b input, .colorpicker_hsb_h input, .colorpicker_hsb_s input, .colorpicker_hsb_b input {
+  font-family: "futura-pt", sans-serif;
+  font-size: 12px;
+}
+
+.colorpicker .2olorpicker_hex input {
   border: 1px solid $border_gray;
   height: 28px;
 }

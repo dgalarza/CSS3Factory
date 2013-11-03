@@ -33,7 +33,7 @@
 
 .welcome-message {
   margin: 29px 20px 29px 0;
-  width: 615px;
+  width: 544px;
   float: left;
   font-size: 16px;
   line-height: 21px;
@@ -44,7 +44,7 @@
 }
 
 .callout {
-  float: left;
+  float: right;
 }
 
 .callout .authors {
@@ -55,6 +55,7 @@
 .callout .book-image {
   float: left;
   margin-right: 15px;
+  margin-top: 10px;
 }
 
 .callout .book-details {
@@ -114,7 +115,7 @@
 }
 
 #swatches-container {
-  margin-top: 50px;
+  margin-top: 36px;
 }
 
 #swatches-container ul {
@@ -122,7 +123,8 @@
 }
 
 #swatches-container .selector + p.notice {
-  margin: 15px 0 0 8px;
+  margin: 15px 0 0 1px;
+  color: #cdcdcd;
 }
 
 #generator-wrapper .color-swatch {
@@ -173,6 +175,7 @@
   float: left;
   background: image-url("/images/btns/add.png") 0 0 no-repeat;
   color: $body_copy;
+  margin-top: 6px;
 }
 
 select[name=color-format] {
@@ -191,6 +194,8 @@ select[name=color-format] {
 .direction-field label {
   font-size: 18px;
   color: #505050;
+  position: relative;
+  top: 3px;
 }
 
 .direction-field select {
