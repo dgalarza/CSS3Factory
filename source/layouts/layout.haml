@@ -1,0 +1,40 @@
+!!!
+%html
+  %head
+    %meta{charset: "UTF-8"}/
+    %title CSS3 Factory
+    %link{href: "/stylesheets/style.css", media: "screen", rel: "stylesheet", type: "text/css"}/
+    %script{src: "http://use.typekit.com/hyh0moi.js", type: "text/javascript"}
+    :javascript
+      try{Typekit.load();}catch(e){}
+  %body
+    #page
+      = yield
+
+      %footer
+        .wrapper
+          %ul
+            %li Damian Galarza
+            %li damian[at]damiangalarza.com
+            %li.last
+              Follow me on:
+              = succeed "," do
+                %a.alt-anchor{href: "http://www.facebook.com/dgalarza", target: "_blank"} Facebook
+              = succeed "," do
+                %a.alt-anchor{href: "http://www.twitter.com/dgalarza", target: "_blank"} Twitter
+              %a.alt-anchor{href: "http://www.github.com/dgalarza", target: "_blank"} Github
+          %p.design-label
+            Design by:
+            %a.alt-anchor{href: "http://www.erinbermudez.com", target: "_blank"} Erin Bermudez
+
+    / END: Page
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-30333735-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
