@@ -4,6 +4,12 @@
     %meta{charset: "UTF-8"}/
     %title CSS3 Factory
     %link{href: "/stylesheets/style.css", media: "screen", rel: "stylesheet", type: "text/css"}/
+
+    - if content_for?(:favicon)
+      %link{ rel: 'icon', type: 'image/png', href: yield_content(:favicon) }
+    - else
+      %link{ rel: 'icon', type: 'image/png', href: '/factory.png' }
+
     %script{src: "http://use.typekit.com/hyh0moi.js", type: "text/javascript"}
     :javascript
       try{Typekit.load();}catch(e){}
