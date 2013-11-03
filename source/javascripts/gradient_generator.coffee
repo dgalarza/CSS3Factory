@@ -1,0 +1,10 @@
+#= require vendor/jquery.uniform
+#= require vendor/jquery.cookie
+#= require vendor/colorpicker
+#= require vendor/underscore
+#= require vendor/jquery.zclip
+#= require base/constants
+#= require classes/ColorSwatch
+#= require classes/GradientGenerator
+#= require controllers/gradient_generator_controller
+#= require initializers/gradient_generator

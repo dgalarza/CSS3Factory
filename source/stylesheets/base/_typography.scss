@@ -1,0 +1,21 @@
+h1,h2,h3,h4,h5, h6 {
+  font-weight: normal;
+  font-family: "minion-pro",sans-serif;
+}
+
+h1 {
+  @include font_size(34);
+}
+
+h2 {
+  @include font_size(25);
+}
+
+h3 {
+  @include font_size(20);
+}
+
+h4 {
+  @include font_size(16);
+  font-style: italic;
+}

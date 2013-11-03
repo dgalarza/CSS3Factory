@@ -1,0 +1,30 @@
+div.selector,
+div.selector.hover, 
+div.selector.active, 
+div.selector.focus, 
+div.selector.active.focus {
+  height: 29px;
+  background-position: 0 -30px;
+
+  span {
+    background-position: right 0;
+  }
+}
+
+div.selector select {
+  font-size: 14px;
+  font-family: "freight-sans-pro",sans-serif;
+  text-transform: uppercase;
+}
+
+div.selector span {
+  font-size: 14px;
+  font-family: "freight-sans-pro",sans-serif;
+  text-transform: uppercase;
+  height: 29px;
+}
+
+div.selector,
+div.selector span {
+  background-image: image-url('custom-uniform.png');
+}

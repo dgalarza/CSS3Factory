@@ -1,0 +1,75 @@
+#site-header h1 {
+  margin-top: 90px;
+  text-align: center;  
+  color: $red;
+  font-size: 40px;
+}
+
+#page-wrapper {
+  background: url(/images/bg-wide.png) 0 80px repeat-x;
+  position: relative;
+}
+
+.factory-logo {
+  left: 50%;
+  top: 63px;
+  margin-left: -100px;
+  position: absolute;
+}
+
+#content-wrapper p {
+  color: $red;
+  top: 122px;
+  font-style: italic;
+  float: left;  
+  position: absolute;
+  text-transform: lowercase;
+  font-family: "minion-pro",sans-serif;
+  font-size: 16px;
+}
+
+#content-wrapper {
+  height: 263px;
+  position: relative;
+}
+
+.coming-soon {
+  left: 74px;
+}
+
+.meantime {
+  left: 623px;
+}
+
+#sub-content {
+  margin-top: 59px;
+  overflow: hidden;
+}
+
+#sub-content > p {
+  margin-left: 53px;
+  font-size: 16px;
+  width: 450px;
+  float: left;
+  line-height: 22px;
+}
+
+.gradient-generator {
+  margin-left: 99px;
+  float: left;
+
+  img {
+    margin-right: 13px;
+    float: left
+  }
+
+  em { 
+    font-size: 14px;
+  }
+}
+
+.gradient-generator .generator-wrapper {
+  line-height: 21px;
+  margin-top: 15px;
+  float: left;
+}

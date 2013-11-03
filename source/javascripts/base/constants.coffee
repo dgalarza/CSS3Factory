@@ -1,0 +1,3 @@
+window.CSSFactory =
+  initializers: {}
+  classes: {}

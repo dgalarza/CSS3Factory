@@ -1,0 +1,10 @@
+@mixin font_size($px_size) {
+  font-size: $px_size + px;
+  font-size: ($px_size/16) + rem;
+}
+
+@mixin hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}

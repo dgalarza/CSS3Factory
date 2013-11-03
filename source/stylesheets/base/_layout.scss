@@ -1,28 +1,9 @@
-@import 'compass/css3/box-shadow';
-@import 'compass/css3/border-radius';
-@import 'compass/css3/font-face';
-@import 'compass/css3/transition';
-@import 'compass/css3/images';
-
-$red: #ce3927;
-$gray: #505050;
-
-$page-width: 1000px;
-$page-padding: 20px;
-
-$post-content-spacing: 30px;
-
 aside, section, article, time, nav {
  display: block; 
 }
 
-h1,h2,h3,h4,h5 {
-  font-weight: normal;
-  font-family: "minion-pro";
-}
-
 body, html {
-  font-family: "freight-sans-pro";
+  font-family: "freight-sans-pro",sans-serif;
   background: #fefefe;
   color: #505050;
   height: 100%;
@@ -43,12 +24,12 @@ input[type=url],
 input[type=email],
 textarea {
   font-size: 14px;
-  font-family: "minion-pro";
+  font-family: "minion-pro",sans-serif;
   color: $gray;
   resize: none;
   outline: none;
   border: 1px solid #b3b3b3;
-  padding: 15px 0 10px 13px;
+  padding: 15px 13px 10px 13px;
   @include box-shadow(0 0 5px 0 #e1e1e1 inset);
   @include transition(box-shadow 0.25s linear 0s);
   &:focus { 
@@ -56,7 +37,7 @@ textarea {
   }
 }
 
-input[type=text] {
+input[type=text]  {
   height: 11px;
 }
 
@@ -92,6 +73,11 @@ a:hover {
 
 .meridian {
   text-transform: lowercase;
+}
+
+#page > header {
+  margin-bottom: 35px;
+  border-top: 16px solid $red;
 }
 
 #page-wrapper {
@@ -140,4 +126,19 @@ footer li.last {
 footer .design-label {
   padding-top: 28px;
   float: right;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.notice {
+  font-size: 14px;
+  color: #505050;
 }

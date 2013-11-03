@@ -1,0 +1,117 @@
+%header#site-header
+
+  .ad-container.wrapper
+
+  .main-header.wrapper.clearfix
+    %h2
+      = link_to "/" do
+        = image_tag "icons/css3-factory.png"
+        CSS3 Factory
+
+    .social-wrapper
+
+      <div class="g-plusone" data-href="http://gradients.glrzad.com"></div>
+      .fb-like{ 'data-href' => 'http://gradients.glrzad.com/', 'data-send' => false, 'data-layout' => 'button_count', 'data-action' => 'recommend', 'data-width' => 90, 'data-show-faces' => false }
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-text="#CSS3 Gradient Generator" data-url="http://gradients.glrzad.com" data-via="css3factory">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
+.welcome
+  .wrapper.clearfix
+    .welcome-message
+      %h2 Same Gradient Generator, With a New Look
+      %p The coveted CSS Generator has undergone a redesign and moved to its new home within the CSS Factory. It has maintained all of it's tools and functions but looks even better now. The redesign enhances the generator's usability and I will be adding even more advanced fucntions soon.
+
+    .callout
+      = image_tag "html5-css3-real-world.png", alt: "HTML5 &amp; CSS3 For the Real World", class: 'book-image'
+      .book-details
+        %h4 Featured in
+        %h3
+          = link_to "HTML5 &amp; CSS3<br />For the Real World", "http://www.sitepoint.com/store/html5-css3-for-the-real-world/", target: '_blank'
+          %p.authors Alexis Goldstein, Louis Lazaris &amp; Estelle Weyl
+
+#generator-wrapper.wrapper
+  %header.clearfix
+    %h1 Gradient Generator
+    .ad-container
+
+  .swatch-controls.control-box
+    %h3 Color Swatches
+
+    #color-picker
+
+    #swatches-container
+      %a.add-swatch-btn.add-swatch-trigger{ href: "#addColor" }
+        Add
+      %ul.swatch-list.clearfix
+        %li.color-swatch.template
+          %a.swatch{ href: '#swatch' }
+          %a.remove-swatch{ href: '#remove' }
+
+      .color-format
+        %h3 Color Format
+        %select{ name: 'color-format' }
+          %option{ value: 'hex' } Hex
+          %option{ value: 'rgb' } RGB
+        %p.notice * this selection will be remembered next time.
+
+  .gradient-controls.control-box
+    %h3 Gradient Sample
+    #gradient-sample
+
+    .slider-container.clearfix
+      .swatch-slider
+      %input#color-position{ name: 'color-position', type: 'text', maxlength: 3 }
+
+    #directions
+      %h3 Gradient Direction
+
+      .direction-field
+        %label{ for: 'x-start' } X &ndash; Start
+        %select.direction-control{ name: 'x-start', id: 'x-start', data: { direction: 'x', angle: 'start' } }
+          %option{ value: 'left', selected: 'selected' } Left
+          %option{ value: 'right' } Right
+
+      .direction-field
+        %label{ for: 'y-start' } Y &ndash; Start
+        %select.direction-control{ name: 'y-start', id: 'y-start', data: { direction: 'y', angle: 'start' } }
+          %option{ value: 'top', selected: 'selected' } Top
+          %option{ value: 'bottom' } Bottom
+
+      .direction-field
+        %label{ for: 'x-end' } X &ndash; End
+        %select.direction-control{ name: 'x-end', id: 'x-end', data: { direction: 'x', angle: 'end' } }
+          %option{ value: 'left', selected: 'selected' } Left
+          %option{ value: 'right' } Right
+
+      .direction-field
+        %label{ for: 'y-end' } Y &ndash; End
+        %select.direction-control{ name: 'y-end', id: 'y-end', data: { direction: 'y', angle: 'end' } }
+          %option{ value: 'top' } Top
+          %option{ value: 'bottom', selected: 'selected' } Bottom
+
+
+#code.wrapper
+  .code-container.gradient-code
+    %h3 Code
+    %a.copy-trigger.copy-link{ href: '#copy', title: "Copy"} Copy
+    .generated-code
+
+#comments
+  #disqus_thread.wrapper
+
+  :plain
+    <script type="text/javascript">
+    var disqus_shortname = 'glrzad';
+    var disqus_url = 'http://www.glrzad.com/css/css3-webkit-gradient-generator/ ';
+    var disqus_identifier = '34 http://www.glrzad.com/?p=34';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+
+- content_for :scripts do
+  = javascript_include_tag "gradient_generator"

@@ -1,0 +1,142 @@
+.colorpicker {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.colorpicker .colorpicker_hex input {
+  border: 1px solid $border_gray;
+  height: 28px;
+}
+
+.colorpicker_field span {
+  top: 3px;
+  width: 15px;
+  right: 21px;
+}
+
+.colorpicker_field label {
+  line-height: 30px;
+  @include font_size(18);
+}
+
+.colorpicker_color div {
+  @include border-radius(4px);
+}
+
+.color-controls {
+  position: absolute;
+  top: 123px;
+  left: 380px;
+}
+
+.colorpicker_hue {
+  left: 330px;
+}
+
+.colorpicker_new_color {
+  left: 380px;
+  background: transparent;
+}
+
+.colorpicker_current_color {
+  left: 496px;
+  background: transparent;
+}
+
+.colorpicker_new_color,
+.colorpicker_current_color {
+  @include transition(background-color, 0.5s, linear 0s);
+}
+
+.colorpicker_hue div {
+  width: 40px;
+  left: -11px;
+  background: image-url("/images/colorpicker/colorpicker_indicator.png") 0 0 no-repeat;
+}
+
+.colorpicker_rgb_r,
+.colorpicker_rgb_g,
+.colorpicker_rgb_b,
+.colorpicker_hsb_h,
+.colorpicker_hsb_s,
+.colorpicker_hsb_b {
+  width: 113px;
+  height: 30px;
+  background: image-url("/images/colorpicker/color_field.png") 20px 0 no-repeat;
+
+  input {
+    left: 24px;
+    height: 21px;
+    right: auto;
+  }
+
+  input:focus {
+    outline: none;
+  }
+}
+
+.colorpicker_hex,
+.colorpicker_rgb_r,
+.colorpicker_rgb_g,
+.colorpicker_rgb_b {
+  left: 0;
+}
+
+.colorpicker_hsb_h,
+.colorpicker_hsb_s,
+.colorpicker_hsb_b {
+  left: 124px;
+}
+
+.colorpicker_submit {
+  display: none;
+  background: none;
+}
+
+.colorpicker_hsb_h,
+.colorpicker_rgb_r {
+  top: 0;
+}
+
+.colorpicker_hsb_s,
+.colorpicker_rgb_g {
+  top: 45px;
+}
+
+.colorpicker_hsb_b,
+.colorpicker_rgb_b {
+  top: 90px;
+}
+
+.colorpicker_hex,
+.colorpicker_submit {
+  top: 160px;
+}
+
+.colorpicker_hex {
+  width: 229px;
+  background: none;
+}
+
+.colorpicker_hex label {
+  position: relative;
+  float: left;
+  top: 8px;
+}
+
+.colorpicker_hex input {
+  width: 164px;
+  float: right;
+  text-align: left;
+  position: static;
+  text-transform: uppercase;
+  padding-left: 5px;
+
+  &:focus {
+    outline: none;
+  }
+}

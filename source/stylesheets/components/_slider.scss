@@ -1,0 +1,44 @@
+.ui-state-default.ui-slider-handle {
+  width: 28px;
+  height: 25px;
+  background: image-url('slider/handle.png') 0 0 no-repeat;
+  border: 1px solid transparent;
+}
+
+.ui-state-default.ui-slider-handle:active,
+.ui-state-default.ui-slider-handle:focus {
+  outline: none;
+}
+
+.ui-widget-content {
+  border: 1px solid #c3c3c3;
+}
+
+.ui-slider-horizontal {
+  height: 15px;
+}
+
+.ui-corner-all {
+  border-radius: 8px;
+}
+
+.ui-slider {
+  width: 218px;
+  background: image-url('slider/backdrop.png') 0 5px repeat-x;
+}
+
+.ui-slider-range {
+  background: image-url('slider/range.png') 0 0 repeat-x;
+}
+
+.ui-slider .ui-slider-range {
+  background-position: 0 5px;
+}
+
+.transition .ui-state-default.ui-slider-handle {
+  @include transition(left 0.15s linear 0s);
+}
+
+.transition .ui-slider-range {
+  @include transition(width 0.15s linear 0s);
+}
