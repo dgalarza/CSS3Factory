@@ -1,5 +1,4 @@
 class CSSFactory.GradientGeneratorController
-
   constructor: ->
     @_bindEvents()
 

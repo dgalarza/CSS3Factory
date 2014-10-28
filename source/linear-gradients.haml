@@ -35,75 +35,76 @@
           = link_to "HTML5 &amp; CSS3<br />For the Real World", "http://www.sitepoint.com/store/html5-css3-for-the-real-world/", target: '_blank'
           %p.authors Alexis Goldstein, Louis Lazaris &amp; Estelle Weyl
 
-#generator-wrapper.wrapper
-  %header.clearfix
-    %h2 CSS Gradient Generator
-    .ad-container
-      :plain
-        <ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px" data-ad-client="ca-pub-1749070472517546" data-ad-slot="9952397682"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+%section#generator{ "ng-controller" => "GradientGeneratorCtrl" }
+  #generator-wrapper.wrapper
+    %header.clearfix
+      %h2 CSS Gradient Generator
+      .ad-container
+        :plain
+          <ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px" data-ad-client="ca-pub-1749070472517546" data-ad-slot="9952397682"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
-  .swatch-controls.control-box
-    %h3 Color Swatches
+    .swatch-controls.control-box
+      %h3 Color Swatches
 
-    #color-picker
+      #color-picker
 
-    #swatches-container.clearfix
-      %a.add-swatch-btn.add-swatch-trigger{ href: "#addColor" }
-        Add
-      %ul.swatch-list.clearfix
-        %li.color-swatch.template
-          %a.swatch{ href: '#swatch' }
-          %a.remove-swatch{ href: '#remove' }
+      #swatches-container.clearfix
+        %a.add-swatch-btn.add-swatch-trigger{ href: "#addColor", "ng-click" => "addSwatch()" }
+          Add
+        %ul.swatch-list.clearfix
+          %li.color-swatch{ "ng-repeat" => "swatch in swatches", "ng-click" => "activateSwatch(swatch)", "ng-class" => "{active: isActiveSwatch(swatch)}" }
+            %a.swatch{ href: '#swatch', "ng-style" => "{ backgroundColor: swatch.color }" }
+            %a.remove-swatch{ href: '#remove', "ng-click" => "removeSwatch(swatch)" }
 
-      .color-format
-        %h3 Color Format
-        %select{ name: 'color-format' }
-          %option{ value: 'hex' } Hex
-          %option{ value: 'rgb' } RGB
-        %p.notice *The selection will be remembered next time.
+        .color-format
+          %h3 Color Format
+          %select{ name: 'color-format' }
+            %option{ value: 'hex' } Hex
+            %option{ value: 'rgb' } RGB
+          %p.notice *The selection will be remembered next time.
 
-  .gradient-controls.control-box
-    %h3 Gradient Sample
-    #gradient-sample
+    .gradient-controls.control-box
+      %h3 Gradient Sample
+      #gradient-sample
 
-    .slider-container.clearfix
-      .swatch-slider
-      %input#color-position{ name: 'color-position', type: 'text', maxlength: 3 }
+      .slider-container.clearfix
+        .swatch-slider
+        %input#color-position{ name: 'color-position', type: 'text', maxlength: 3 }
 
-    #directions
-      %h3 Gradient Direction
+      #directions
+        %h3 Gradient Direction
 
-      .direction-field
-        %label{ for: 'x-start' } X &ndash; Start
-        %select.direction-control{ name: 'x-start', id: 'x-start', data: { direction: 'x', angle: 'start' } }
-          %option{ value: 'left', selected: 'selected' } Left
-          %option{ value: 'right' } Right
+        .direction-field
+          %label{ for: 'x-start' } X &ndash; Start
+          %select.direction-control{ name: 'x-start', id: 'x-start', data: { direction: 'x', angle: 'start' } }
+            %option{ value: 'left', selected: 'selected' } Left
+            %option{ value: 'right' } Right
 
-      .direction-field
-        %label{ for: 'y-start' } Y &ndash; Start
-        %select.direction-control{ name: 'y-start', id: 'y-start', data: { direction: 'y', angle: 'start' } }
-          %option{ value: 'top', selected: 'selected' } Top
-          %option{ value: 'bottom' } Bottom
+        .direction-field
+          %label{ for: 'y-start' } Y &ndash; Start
+          %select.direction-control{ name: 'y-start', id: 'y-start', data: { direction: 'y', angle: 'start' } }
+            %option{ value: 'top', selected: 'selected' } Top
+            %option{ value: 'bottom' } Bottom
 
-      .direction-field
-        %label{ for: 'x-end' } X &ndash; End
-        %select.direction-control{ name: 'x-end', id: 'x-end', data: { direction: 'x', angle: 'end' } }
-          %option{ value: 'left', selected: 'selected' } Left
-          %option{ value: 'right' } Right
+        .direction-field
+          %label{ for: 'x-end' } X &ndash; End
+          %select.direction-control{ name: 'x-end', id: 'x-end', data: { direction: 'x', angle: 'end' } }
+            %option{ value: 'left', selected: 'selected' } Left
+            %option{ value: 'right' } Right
 
-      .direction-field
-        %label{ for: 'y-end' } Y &ndash; End
-        %select.direction-control{ name: 'y-end', id: 'y-end', data: { direction: 'y', angle: 'end' } }
-          %option{ value: 'top' } Top
-          %option{ value: 'bottom', selected: 'selected' } Bottom
+        .direction-field
+          %label{ for: 'y-end' } Y &ndash; End
+          %select.direction-control{ name: 'y-end', id: 'y-end', data: { direction: 'y', angle: 'end' } }
+            %option{ value: 'top' } Top
+            %option{ value: 'bottom', selected: 'selected' } Bottom
 
 
-#code.wrapper
-  .code-container.gradient-code
-    %h3 Code
-    %a.copy-trigger.copy-link{ href: '#copy', title: "Copy"} Copy
-    .generated-code
+  #code.wrapper
+    .code-container.gradient-code
+      %h3 Code
+      %a.copy-trigger.copy-link{ href: '#copy', title: "Copy"} Copy
+      .generated-code
 
 #comments
   #disqus_thread.wrapper
