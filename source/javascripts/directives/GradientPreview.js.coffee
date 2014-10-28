@@ -12,11 +12,7 @@
       str = "linear-gradient("
 
       for swatch, index in $scope.swatches
-        if index == 0
-          percentage = 50
-        else
-          percentage = 100
-        str += "#{swatch.hexColor()} #{percentage}%,"
+        str += "#{swatch.hexColor()} #{swatch.position}%,"
 
       # Drop trailing ,
       str = str.substr(0, str.length - 1)

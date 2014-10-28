@@ -69,8 +69,8 @@
       %gradient-preview#gradient-sample
 
       .slider-container.clearfix
-        .swatch-slider
-        %input#color-position{ name: 'color-position', type: 'text', maxlength: 3 }
+        .swatch-slider{ "slider" => "" }
+        %input#color-position{ "ng-model" => "activeSwatch.position", name: 'color-position', type: 'text', maxlength: 3 }
 
       #directions
         %h3 Gradient Direction
