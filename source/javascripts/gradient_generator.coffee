@@ -8,4 +8,5 @@
 
 #= require GradientGenerator
 #= require_tree ./services
+#= require_tree ./directives
 #= require controllers/GradientGeneratorCtrl
