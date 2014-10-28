@@ -75,5 +75,3 @@ class CSSFactory.classes.ColorSwatch
   _getTemplate: ->
     @template ||= @_cloneTemplate().removeClass('template')
 
-  _cloneTemplate: ->
-    $('.swatch-list .template').clone()
