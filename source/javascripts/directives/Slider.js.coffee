@@ -1,5 +1,5 @@
 @css3factory.directive "slider", ->
-  restrict: "A"
+  restrict: "E"
 
   template:
     """

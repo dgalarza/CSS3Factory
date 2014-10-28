@@ -211,7 +211,9 @@ select[name=color-format] {
   float: right;
 }
 
-.slider-container {
+slider {
+  @extend .clearfix;
+  display: block;
   margin-top: 20px;
 }
 
