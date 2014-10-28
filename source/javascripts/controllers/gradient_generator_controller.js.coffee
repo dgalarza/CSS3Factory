@@ -2,8 +2,6 @@ class CSSFactory.GradientGeneratorController
   constructor: ->
     @_bindEvents()
 
-    format = $.cookie('format')
-    $('select[name=color-format]').val(format) if format
     @gradientGenerator = new CSSFactory.classes.GradientGenerator(format)
 
     $('select').uniform()
@@ -21,11 +19,6 @@ class CSSFactory.GradientGeneratorController
 
     @gradientGenerator.updateDirection(direction, angle, value)
 
-  colorFormatChange: (e) =>
-    value = $(e.currentTarget).val()
-    $.cookie('format', value, expires: 1835)
-    @gradientGenerator.updateFormat(value)
-
   enableSliderTransitions: ->
     $('.swatch-slider').addClass('transition')
 
@@ -33,8 +26,6 @@ class CSSFactory.GradientGeneratorController
     $('.swatch-slider').removeClass('transition')
 
   _bindEvents: ->
-    context = this
-
     $('#directions select').on 'change', @directionChange
 
     # Enable and disable transitions so that the slider only uses CSS3 transitions
@@ -43,8 +34,6 @@ class CSSFactory.GradientGeneratorController
     # with the mouse which is unintended
     $('#color-position').on 'focus', @enableSliderTransitions
     $('#color-position').on 'blur', @disableSliderTransitions
-
-    $('select[name=color-format]').on 'change', @colorFormatChange
 
     $('#code .copy-trigger').zclip
       path: '/ZeroClipboard.swf'

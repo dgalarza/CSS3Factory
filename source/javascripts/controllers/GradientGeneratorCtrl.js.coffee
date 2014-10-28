@@ -5,7 +5,7 @@
     xEnd: "left"
     yEnd: "bottom"
 
-  $scope.colorFormat = "hex"
+  $scope.colorFormat = $.cookie("format") || "hex"
 
   $scope.activateSwatch = (swatch) ->
     $scope.activeSwatch = swatch
@@ -22,6 +22,9 @@
 
   $scope.isActiveSwatch = (swatch) =>
     swatch == $scope.activeSwatch
+
+  $scope.$watch "colorFormat", (value) ->
+    $.cookie("format", value, expires: 1835)
 
   $scope.swatches = swatchFactory.randomGradientSwatches()
   $scope.activateSwatch _.last $scope.swatches
