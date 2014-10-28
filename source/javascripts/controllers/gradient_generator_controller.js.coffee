@@ -8,26 +8,9 @@ class CSSFactory.GradientGeneratorController
 
     $('select').uniform()
 
-  swatchActivated: (swatch) ->
-    $('.swatch-slider').slider('option', 'value', swatch.position)
-    @updateSliderInput(swatch.position)
-
-  colorChange: =>
-    @gradientGenerator.colorListener.apply(@gradientGenerator, arguments)
-
   updateSwatchLocation: (ui) ->
     @gradientGenerator.updateSwatchPosition(ui.value)
     @updateSliderInput(ui.value)
-
-  updateSliderInput: (val) ->
-    $('#color-position').val(val)
-
-  sliderInputChange: (e) =>
-    value = $(e.target).val()
-    return if value == $('.swatch-slider').slider('option', 'value')
-
-    if value >= 0 && value <= 100
-      $('.swatch-slider').slider('option', 'value', value)
 
   directionChange: (e) =>
     $select = $(e.target)
@@ -52,26 +35,7 @@ class CSSFactory.GradientGeneratorController
   _bindEvents: ->
     context = this
 
-    $('#color-picker').ColorPicker
-      flat: true
-      onChange: @colorChange
-
-    $(document).on 'swatchActivated', (e, swatch) ->
-      context.swatchActivated(swatch)
-
     $('#directions select').on 'change', @directionChange
-
-    sliderCb = (e, ui) ->
-      context.updateSwatchLocation(ui)
-
-    $('.swatch-slider').slider
-      max: 100
-      range: 'min'
-      change: sliderCb
-      slide: sliderCb
-
-    throttledSliderInputChange = _.throttle(@sliderInputChange, 500)
-    $('#color-position').on 'keyup', throttledSliderInputChange
 
     # Enable and disable transitions so that the slider only uses CSS3 transitions
     # when we are manually updating the value with the text field. Otherwise, the transitions
