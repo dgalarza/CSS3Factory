@@ -1,29 +1,4 @@
 class CSSFactory.classes.GradientGenerator
-  @vendorPrefixes = ['o', 'moz', 'webkit', 'ms']
-
-  xStart: 'left'
-  yStart: 'top'
-  xEnd:   'left'
-  yEnd:   'bottom'
-
-  format: null
-
-  currentSwatch: null
-  swatches: []
-
-  constructor: (@format = 'hex') ->
-    @randomGradient()
-
-    _swatch = @currentSwatch
-    setTimeout( ->
-      $(document).trigger('swatchActivated', _swatch)
-    , 250)
-
-  colorListener: (hsb, hex, rgb) ->
-    return unless @currentSwatch
-    @currentSwatch.setColor(rgb, hex)
-    @updateGradient()
-
   updateDirection: (direction, angle, value) ->
     angle = angle.charAt(0).toUpperCase() + angle.slice(1)
     directionKey = "#{direction}#{angle}"
@@ -35,17 +10,7 @@ class CSSFactory.classes.GradientGenerator
   updateGradient: ->
     @swatches = _.sortBy @swatches, (swatch) -> swatch.position
 
-    @updateSample()
     @updateCode()
-
-  updateSample: ->
-    $sample = $('#gradient-sample')
-    prefixedGradient = @_prefixedLinearVariant()
-
-    for prefix in GradientGenerator.vendorPrefixes
-      $sample.css backgroundImage: "-#{prefix}-#{prefixedGradient}"
-
-    $sample.css backgroundImage: @generateGradient()
 
   updateCode: ->
     code = "background-image: "
@@ -61,41 +26,8 @@ class CSSFactory.classes.GradientGenerator
     code = "<pre>#{code}</pre>"
     $('.generated-code').html(code)
 
-  generateGradient: ->
-    @_linearGradient()
-
-  nextSimilarSwatch: ->
-    currentRGB = @currentSwatch.rgb
-
-    rgb =
-      r: CSSFactory.classes.ColorSwatch.nextInRange(currentRGB.r)
-      g: CSSFactory.classes.ColorSwatch.nextInRange(currentRGB.g)
-      b: CSSFactory.classes.ColorSwatch.nextInRange(currentRGB.b)
-
-    hex = CSSFactory.classes.ColorSwatch.rgbToHex(rgb)
-
-    @addSwatch(hex, rgb, 100)
-
-  randomGradient: ->
-    @randomSwatch()
-    @newSwatch()
-
   updateFormat: (format) ->
     @format = format
-    @updateGradient()
-
-  randomSwatch: ->
-    rgb =
-      r: @_randomRGB()
-      g: @_randomRGB()
-      b: @_randomRGB()
-
-    hex = CSSFactory.classes.ColorSwatch.rgbToHex(rgb)
-
-    @addSwatch(hex, rgb)
-
-  updateSwatchPosition: (position) ->
-    @currentSwatch.position = position
     @updateGradient()
 
   _linearGradient: ->
@@ -158,17 +90,6 @@ class CSSFactory.classes.GradientGenerator
     str = str.substr(0, str.length - 2)
 
     str += ')'
-
-  _determineDirection: ->
-    if @xStart == @xEnd && @yStart != @yEnd
-      @yEnd
-    else if @yStart == @yEnd && @xStart != @xEnd
-      @xEnd
-    else
-      "#{@xEnd} #{@yEnd}"
-
-  _randomRGB: ->
-    Math.floor((Math.random() *255 ) + 1)
 
   _colorStopMethod: ->
     if @format == 'hex'

@@ -1,22 +1,14 @@
-@css3factory.directive "gradientPreview", ->
+@css3factory.directive "gradientPreview", (gradientCodeFactory) ->
   restrict: "E"
 
   link: ($scope, elem, attrs) ->
-    vendorPrefixes = ['o', 'moz', 'webkit', 'ms']
-
     updateGradientSample = ->
-      $sample = $('#gradient-sample')
-      $sample.css backgroundImage: generateGradient()
+      images = gradientCodeFactory.generateSampleCss(
+        $scope.swatches,
+        $scope.gradientDirection
+      )
 
-    generateGradient = ->
-      str = "linear-gradient("
-
-      for swatch, index in $scope.swatches
-        str += "#{swatch.hexColor()} #{swatch.position}%,"
-
-      # Drop trailing ,
-      str = str.substr(0, str.length - 1)
-
-      str += ')'
+      for image in images
+        elem.css backgroundImage: image
 
     $scope.$watch "swatches", updateGradientSample, true

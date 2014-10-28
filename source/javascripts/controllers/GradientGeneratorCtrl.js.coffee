@@ -1,4 +1,10 @@
 @css3factory.controller "GradientGeneratorCtrl", ($scope, swatchFactory) ->
+  $scope.gradientDirection =
+    xStart: "left"
+    yStart: "top"
+    xEnd: "left"
+    yEnd: "bottom"
+
   $scope.activateSwatch = (swatch) ->
     $scope.activeSwatch = swatch
 

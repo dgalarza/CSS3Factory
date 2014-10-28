@@ -8,7 +8,6 @@
 
 #= require GradientGenerator
 #= require classes/Swatch
-#= require services/colors
-#= require services/swatchFactory
+#= require_tree ./services/
 #= require_tree ./directives
 #= require controllers/GradientGeneratorCtrl
