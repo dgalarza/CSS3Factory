@@ -1,22 +1,14 @@
-@css3factory.factory "swatchFactory", ->
+@css3factory.factory "swatchFactory", (colors) ->
   nextSwatchId = 0
 
-  class Swatch
-    constructor: (options) ->
-      @hex = options.hex.toUpperCase()
-      @id = options.id
-      @position = options.position
-
-    hexColor: ->
-      "##{@hex}"
-
-    hexColorStop: ->
-      "#{@hexColor()} #{@position}%"
-
   buildSwatch: ->
+    randomRGB = colors.randomColor()
+    randomHex = colors.rgbToHex(randomRGB)
+
     new Swatch
       id: nextSwatchId++
-      hex: "2CF246"
+      hex: randomHex
+      rgb: randomRGB
 
   generateRandomSwatches: ->
     randomSwatches = []

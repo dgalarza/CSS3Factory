@@ -7,6 +7,8 @@
 #= require angularjs/angular
 
 #= require GradientGenerator
-#= require_tree ./services
+#= require classes/Swatch
+#= require services/colors
+#= require services/swatchFactory
 #= require_tree ./directives
 #= require controllers/GradientGeneratorCtrl
