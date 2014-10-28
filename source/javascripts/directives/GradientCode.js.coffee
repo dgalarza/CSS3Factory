@@ -14,4 +14,5 @@
       )
 
     $scope.$watch "swatches", updateCodeSample, true
-    $scope.$watch "colorFormat", updateCodeSample, true
+    $scope.$watch "gradientDirection", updateCodeSample, true
+    $scope.$watch "colorFormat", updateCodeSample

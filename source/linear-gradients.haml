@@ -75,25 +75,25 @@
 
         .direction-field
           %label{ for: 'x-start' } X &ndash; Start
-          %select.direction-control{ name: 'x-start', id: 'x-start', data: { direction: 'x', angle: 'start' } }
+          %select.direction-control{ name: 'x-start', id: 'x-start', "ng-model" => "gradientDirection.xStart" }
             %option{ value: 'left', selected: 'selected' } Left
             %option{ value: 'right' } Right
 
         .direction-field
           %label{ for: 'y-start' } Y &ndash; Start
-          %select.direction-control{ name: 'y-start', id: 'y-start', data: { direction: 'y', angle: 'start' } }
+          %select.direction-control{ name: 'y-start', id: 'y-start', "ng-model" => "gradientDirection.yStart" }
             %option{ value: 'top', selected: 'selected' } Top
             %option{ value: 'bottom' } Bottom
 
         .direction-field
           %label{ for: 'x-end' } X &ndash; End
-          %select.direction-control{ name: 'x-end', id: 'x-end', data: { direction: 'x', angle: 'end' } }
+          %select.direction-control{ name: 'x-end', id: 'x-end', "ng-model" => "gradientDirection.xEnd" }
             %option{ value: 'left', selected: 'selected' } Left
             %option{ value: 'right' } Right
 
         .direction-field
           %label{ for: 'y-end' } Y &ndash; End
-          %select.direction-control{ name: 'y-end', id: 'y-end', data: { direction: 'y', angle: 'end' } }
+          %select.direction-control{ name: 'y-end', id: 'y-end', "ng-model" => "gradientDirection.yEnd"  }
             %option{ value: 'top' } Top
             %option{ value: 'bottom', selected: 'selected' } Bottom
 

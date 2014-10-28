@@ -13,4 +13,5 @@
         elem.css backgroundImage: image
 
     $scope.$watch "swatches", updateGradientSample, true
-    $scope.$watch "colorFormat", updateGradientSample, true
+    $scope.$watch "gradientDirection", updateGradientSample, true
+    $scope.$watch "colorFormat", updateGradientSample
