@@ -15,5 +15,5 @@
   $scope.isActiveSwatch = (swatch) =>
     swatch == $scope.activeSwatch
 
-  $scope.swatches = swatchFactory.generateRandomSwatches()
+  $scope.swatches = swatchFactory.randomGradientSwatches()
   $scope.activateSwatch _.last $scope.swatches

@@ -1,18 +1,22 @@
 @css3factory.factory "swatchFactory", (colors) ->
   nextSwatchId = 0
 
-  buildSwatch: ->
-    randomRGB = colors.randomColor()
-    randomHex = colors.rgbToHex(randomRGB)
+  buildSwatch: (rgb) ->
+    unless rgb
+      rgb = colors.randomColor()
+
+    hex = colors.rgbToHex(rgb)
 
     new Swatch
       id: nextSwatchId++
-      hex: randomHex
-      rgb: randomRGB
+      hex: hex
+      rgb: rgb
 
-  generateRandomSwatches: ->
-    randomSwatches = []
-    for num in [1..2]
-      randomSwatches.push @buildSwatch()
+  randomGradientSwatches: ->
+    baseColor = colors.randomColor()
+    secondaryColor = colors.nextColor baseColor
 
-    randomSwatches
+    [
+      @buildSwatch baseColor
+      @buildSwatch secondaryColor
+    ]
