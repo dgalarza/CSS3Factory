@@ -46,33 +46,6 @@ class CSSFactory.classes.GradientGenerator
 
     str += ')'
 
-  # Generate the legacy webkit gradient string which is used in some older
-  # webkit browers still such as some Android devices
-  #
-  # @example
-  #   background-image: -webkit-gradient(
-  #     linear,
-  #     left bottom,
-  #     left top,
-  #     color-stop(0.18, #DE722C),
-  #     color-stop(0.59, #FF9547),
-  #     color-stop(0.8, #FFB364)
-  #   );
-  #
-  _webkitLinearGradient: ->
-    str = "-webkit-gradient(\n\tlinear,"
-    str += "\n\t#{@xStart} #{@yStart},"
-    str += "\n\t#{@xEnd} #{@yEnd},"
-
-    colorStopMethod = @_legacyColorStopMethod()
-
-    for swatch in @swatches
-      position = swatch.position / 100
-      str += "\n\t#{swatch[colorStopMethod]()},"
-
-    str = str.substr(0, str.length - 1)
-    str += "\n)"
-
   # Similar to the _linearGradient method however the prefixed versions
   # do not support the *to* keyword in their location
   _prefixedLinearVariant: ->

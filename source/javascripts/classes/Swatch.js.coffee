@@ -9,3 +9,7 @@ class @Swatch
 
   hexColorStop: ->
     "#{@hexColor()} #{@position}%"
+
+  legacyHexColorStop: ->
+    position = @position / 100
+    "color-stop(#{position}, ##{@hex.toUpperCase()})"
