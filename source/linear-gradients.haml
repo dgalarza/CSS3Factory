@@ -59,7 +59,7 @@
 
         .color-format
           %h3 Color Format
-          %select{ name: 'color-format', "ng-model" => "colorFormat" }
+          %select{ name: 'color-format', "ng-model" => "colorFormat", "uniform" => "" }
             %option{ value: 'hex' } Hex
             %option{ value: 'rgb' } RGB
           %p.notice *The selection will be remembered next time.
@@ -75,25 +75,25 @@
 
         .direction-field
           %label{ for: 'x-start' } X &ndash; Start
-          %select.direction-control{ name: 'x-start', id: 'x-start', "ng-model" => "gradientDirection.xStart" }
+          %select.direction-control{ name: 'x-start', id: 'x-start', "ng-model" => "gradientDirection.xStart", "uniform" => "" }
             %option{ value: 'left', selected: 'selected' } Left
             %option{ value: 'right' } Right
 
         .direction-field
           %label{ for: 'y-start' } Y &ndash; Start
-          %select.direction-control{ name: 'y-start', id: 'y-start', "ng-model" => "gradientDirection.yStart" }
+          %select.direction-control{ name: 'y-start', id: 'y-start', "ng-model" => "gradientDirection.yStart", "uniform" => "" }
             %option{ value: 'top', selected: 'selected' } Top
             %option{ value: 'bottom' } Bottom
 
         .direction-field
           %label{ for: 'x-end' } X &ndash; End
-          %select.direction-control{ name: 'x-end', id: 'x-end', "ng-model" => "gradientDirection.xEnd" }
+          %select.direction-control{ name: 'x-end', id: 'x-end', "ng-model" => "gradientDirection.xEnd", "uniform" => ""}
             %option{ value: 'left', selected: 'selected' } Left
             %option{ value: 'right' } Right
 
         .direction-field
           %label{ for: 'y-end' } Y &ndash; End
-          %select.direction-control{ name: 'y-end', id: 'y-end', "ng-model" => "gradientDirection.yEnd"  }
+          %select.direction-control{ name: 'y-end', id: 'y-end', "ng-model" => "gradientDirection.yEnd", "uniform" => ""}
             %option{ value: 'top' } Top
             %option{ value: 'bottom', selected: 'selected' } Bottom
 

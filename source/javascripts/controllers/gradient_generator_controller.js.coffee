@@ -2,8 +2,6 @@ class CSSFactory.GradientGeneratorController
   constructor: ->
     @_bindEvents()
 
-    $('select').uniform()
-
   _bindEvents: ->
     $('#code .copy-trigger').zclip
       path: '/ZeroClipboard.swf'
