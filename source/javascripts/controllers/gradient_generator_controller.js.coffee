@@ -8,17 +8,9 @@ class CSSFactory.GradientGeneratorController
 
     $('select').uniform()
 
-  activateSwatch: (swatch) ->
-    swatch.activate()
-    swatch = @gradientGenerator.setCurrentSwatch(swatch)
-    @swatchActivated(swatch)
-
   swatchActivated: (swatch) ->
     $('.swatch-slider').slider('option', 'value', swatch.position)
     @updateSliderInput(swatch.position)
-
-  newSwatch: ->
-    @gradientGenerator.newSwatch()
 
   colorChange: =>
     @gradientGenerator.colorListener.apply(@gradientGenerator, arguments)
@@ -46,24 +38,10 @@ class CSSFactory.GradientGeneratorController
 
     @gradientGenerator.updateDirection(direction, angle, value)
 
-  addSwatch: =>
-    @newSwatch()
-    false
-
-  swatchClick: (e) =>
-    @activateSwatch $(e.currentTarget).data('swatch')
-    false
-
   colorFormatChange: (e) =>
     value = $(e.currentTarget).val()
     $.cookie('format', value, expires: 1835)
     @gradientGenerator.updateFormat(value)
-
-  removeSwatch: (e) =>
-    e.stopPropagation()
-    swatch = $(e.currentTarget).parents('.color-swatch').data('swatch')
-    @gradientGenerator.removeSwatch(swatch)
-    false
 
   enableSliderTransitions: ->
     $('.swatch-slider').addClass('transition')
@@ -72,7 +50,6 @@ class CSSFactory.GradientGeneratorController
     $('.swatch-slider').removeClass('transition')
 
   _bindEvents: ->
-
     context = this
 
     $('#color-picker').ColorPicker
@@ -82,9 +59,6 @@ class CSSFactory.GradientGeneratorController
     $(document).on 'swatchActivated', (e, swatch) ->
       context.swatchActivated(swatch)
 
-    $('.add-swatch-trigger').on 'click', @addSwatch
-    $('#swatches-container').on 'click', '.color-swatch', @swatchClick
-    $('#swatches-container').on 'click', '.remove-swatch', @removeSwatch
     $('#directions select').on 'change', @directionChange
 
     sliderCb = (e, ui) ->
@@ -117,5 +91,3 @@ class CSSFactory.GradientGeneratorController
         setTimeout ->
           $('#code .copy-trigger').text('Copy')
         , 1500
-
-

@@ -25,10 +25,6 @@ class CSSFactory.classes.GradientGenerator
     @currentSwatch.setColor(rgb, hex)
     @updateGradient()
 
-  setCurrentSwatch: (swatch) ->
-    @currentSwatch = swatch
-    return @currentSwatch
-
   updateDirection: (direction, angle, value) ->
     angle = angle.charAt(0).toUpperCase() + angle.slice(1)
     directionKey = "#{direction}#{angle}"
@@ -69,19 +65,6 @@ class CSSFactory.classes.GradientGenerator
   generateGradient: ->
     @_linearGradient()
 
-  addSwatch: (hex, rgb, position) ->
-    @currentSwatch = CSSFactory.classes.ColorSwatch.buildSwatch(hex, rgb, position)
-    @swatches.push @currentSwatch
-    @currentSwatch.activate()
-
-  newSwatch: ->
-    if @swatches.length > 0
-      @nextSimilarSwatch()
-    else
-      @randomSwatch()
-
-    @updateGradient()
-
   nextSimilarSwatch: ->
     currentRGB = @currentSwatch.rgb
 
@@ -111,18 +94,6 @@ class CSSFactory.classes.GradientGenerator
     hex = CSSFactory.classes.ColorSwatch.rgbToHex(rgb)
 
     @addSwatch(hex, rgb)
-
-  removeSwatch: (swatch) ->
-    index = @swatches.indexOf(swatch)
-    @swatches.splice(index, 1)
-    swatch.destroy()
-
-    @currentSwatch = @swatches[@swatches.length - 1]
-    @currentSwatch.activate()
-
-    $(document).trigger('swatchActivated', @currentSwatch)
-
-    @updateGradient()
 
   updateSwatchPosition: (position) ->
     @currentSwatch.position = position
