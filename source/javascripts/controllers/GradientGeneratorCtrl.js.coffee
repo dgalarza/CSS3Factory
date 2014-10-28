@@ -20,7 +20,7 @@
     $scope.swatches.push newSwatch
     $scope.activeSwatch = newSwatch
 
-  $scope.isActiveSwatch = (swatch) =>
+  $scope.isActiveSwatch = (swatch) ->
     swatch == $scope.activeSwatch
 
   $scope.$watch "colorFormat", (value) ->
