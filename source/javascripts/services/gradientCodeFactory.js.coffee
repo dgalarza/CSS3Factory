@@ -2,12 +2,11 @@
   vendorPrefixes = ['o', 'moz', 'webkit', 'ms']
 
   class GradientCodeGenerator
-    constructor: (@swatches, position) ->
+    constructor: (@swatches, position, @format) ->
       @xStart = position.xStart
       @xEnd = position.xEnd
       @yStart = position.yStart
       @yEnd = position.yEnd
-      @format = 'hex'
 
     generateSampleCss: ->
       prefixedGradient = @_prefixedLinearVariant()
@@ -52,7 +51,7 @@
       str += @_determineDirection()
       str += ', '
 
-      colorStopMethod = 'hexColorStop'
+      colorStopMethod = @_colorStopMethod()
 
       for swatch in @swatches
         str += "#{swatch[colorStopMethod]()}, "
@@ -109,10 +108,10 @@
       else
         'rgbColorStop'
 
-  generateSampleCss: (swatches, gradientDirection) ->
-    generator = new GradientCodeGenerator(swatches, gradientDirection)
+  generateSampleCss: (swatches, gradientDirection, format) ->
+    generator = new GradientCodeGenerator(swatches, gradientDirection, format)
     generator.generateSampleCss()
 
-  generateCodeSample: (swatches, gradientDirection) ->
-    generator = new GradientCodeGenerator(swatches, gradientDirection)
+  generateCodeSample: (swatches, gradientDirection, format) ->
+    generator = new GradientCodeGenerator(swatches, gradientDirection, format)
     generator.generateSampleCode()

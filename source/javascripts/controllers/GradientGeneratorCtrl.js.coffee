@@ -5,6 +5,8 @@
     xEnd: "left"
     yEnd: "bottom"
 
+  $scope.colorFormat = "hex"
+
   $scope.activateSwatch = (swatch) ->
     $scope.activeSwatch = swatch
 

@@ -9,7 +9,9 @@
     updateCodeSample = ->
       $scope.sampleCode =  gradientCodeFactory.generateCodeSample(
         $scope.swatches,
-        $scope.gradientDirection
+        $scope.gradientDirection,
+        $scope.colorFormat
       )
 
     $scope.$watch "swatches", updateCodeSample, true
+    $scope.$watch "colorFormat", updateCodeSample, true

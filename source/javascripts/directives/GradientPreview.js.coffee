@@ -5,10 +5,12 @@
     updateGradientSample = ->
       images = gradientCodeFactory.generateSampleCss(
         $scope.swatches,
-        $scope.gradientDirection
+        $scope.gradientDirection,
+        $scope.colorFormat
       )
 
       for image in images
         elem.css backgroundImage: image
 
     $scope.$watch "swatches", updateGradientSample, true
+    $scope.$watch "colorFormat", updateGradientSample, true

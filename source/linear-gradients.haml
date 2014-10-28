@@ -59,7 +59,7 @@
 
         .color-format
           %h3 Color Format
-          %select{ name: 'color-format' }
+          %select{ name: 'color-format', "ng-model" => "colorFormat" }
             %option{ value: 'hex' } Hex
             %option{ value: 'rgb' } RGB
           %p.notice *The selection will be remembered next time.
