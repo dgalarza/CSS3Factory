@@ -101,7 +101,7 @@
   #code.wrapper
     .code-container.gradient-code
       %h3 Code
-      %a.copy-trigger.copy-link{ href: '#copy', title: "Copy"} Copy
+      %a.copy-trigger.copy-link{ href: '#copy', title: "Copy", "zero-clipboard" => "", data: { "copy-target" => ".generated-code" } } Copy
       %gradient-code.generated-code
 
 #comments
