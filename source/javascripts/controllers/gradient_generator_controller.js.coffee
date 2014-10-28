@@ -19,21 +19,8 @@ class CSSFactory.GradientGeneratorController
 
     @gradientGenerator.updateDirection(direction, angle, value)
 
-  enableSliderTransitions: ->
-    $('.swatch-slider').addClass('transition')
-
-  disableSliderTransitions: ->
-    $('.swatch-slider').removeClass('transition')
-
   _bindEvents: ->
     $('#directions select').on 'change', @directionChange
-
-    # Enable and disable transitions so that the slider only uses CSS3 transitions
-    # when we are manually updating the value with the text field. Otherwise, the transitions
-    # make the slider feel slow when they are applied and the user is dragging the slider
-    # with the mouse which is unintended
-    $('#color-position').on 'focus', @enableSliderTransitions
-    $('#color-position').on 'blur', @disableSliderTransitions
 
     $('#code .copy-trigger').zclip
       path: '/ZeroClipboard.swf'
