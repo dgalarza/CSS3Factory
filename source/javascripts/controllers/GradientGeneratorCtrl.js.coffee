@@ -1,8 +1,4 @@
-@css3factory.controller "GradientGeneratorCtrl", ($scope) ->
-  nextSwatchId = 0
-
-  $scope.swatches = []
-
+@css3factory.controller "GradientGeneratorCtrl", ($scope, swatchFactory) ->
   $scope.activateSwatch = (swatch) ->
     $scope.activeSwatch = swatch
 
@@ -12,15 +8,12 @@
     $scope.activeSwatch = _.last($scope.swatches)
 
   $scope.addSwatch = ->
-    newSwatch = buildSwatch()
+    newSwatch = swatchFactory.buildSwatch()
     $scope.swatches.push newSwatch
     $scope.activeSwatch = newSwatch
 
   $scope.isActiveSwatch = (swatch) =>
     swatch == $scope.activeSwatch
 
-  buildSwatch = ->
-    { id: nextSwatchId++, color: "#2CF246" }
-
-  for num in [1..2]
-    $scope.addSwatch()
+  $scope.swatches = swatchFactory.generateRandomSwatches()
+  $scope.activateSwatch _.last $scope.swatches

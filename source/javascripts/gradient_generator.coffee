@@ -7,4 +7,5 @@
 #= require angularjs/angular
 
 #= require GradientGenerator
+#= require_tree ./services
 #= require controllers/GradientGeneratorCtrl
