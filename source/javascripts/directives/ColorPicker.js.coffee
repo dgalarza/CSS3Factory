@@ -3,7 +3,8 @@
 
   controller: ($scope) ->
     $scope.updateColor = (hsb, hex, rgb) ->
-      $scope.activeSwatch.color = "##{hex}"
+      $scope.activeSwatch.hex = hex
+      $scope.activeSwatch.rgb = rgb
       $scope.$apply()
 
   link: ($scope, elem, attrs) ->

@@ -1,5 +1,4 @@
 class CSSFactory.classes.ColorSwatch
-
   @pallete: null
   @colorPicker: null
 
@@ -17,7 +16,7 @@ class CSSFactory.classes.ColorSwatch
 
     delta = Math.ceil(255 / color) / 10
     newColor = Math.ceil(delta * color) + color
-    
+
     return 255 if newColor > 255
     newColor
 
@@ -38,17 +37,6 @@ class CSSFactory.classes.ColorSwatch
 
     @updateElementColor()
 
-  activate: ->
-    $('.color-swatch.active').removeClass('active')
-    ColorSwatch.colorPicker.ColorPickerSetColor(@hex)
-    @$el.addClass('active')
-
-  destroy: ->
-    @$el.remove()
-
-  updateElementColor: ->
-    @$el.find('.swatch').css('background-color', "##{@hex}")
-
   hexColorStop: ->
     "##{@hex.toUpperCase()} #{@position}%"
 
@@ -62,16 +50,3 @@ class CSSFactory.classes.ColorSwatch
   legacyRGBColorStop: ->
     position = @position / 100
     "color-stop(#{position}, rgb(#{@rgb.r}, #{@rgb.g}, #{@rgb.b}))"
-
-  buildHTML: ->
-    swatch = @_getTemplate().clone()
-
-    @$el = $(swatch)
-    @$el.data('swatch', this)
-    @updateElementColor()
-
-    @$el
-
-  _getTemplate: ->
-    @template ||= @_cloneTemplate().removeClass('template')
-

@@ -16,7 +16,7 @@
           percentage = 50
         else
           percentage = 100
-        str += "#{swatch.color} #{percentage}%,"
+        str += "#{swatch.hexColor()} #{percentage}%,"
 
       # Drop trailing ,
       str = str.substr(0, str.length - 1)

@@ -1,5 +1,4 @@
 class CSSFactory.classes.GradientGenerator
-
   @vendorPrefixes = ['o', 'moz', 'webkit', 'ms']
 
   xStart: 'left'
