@@ -1,7 +1,7 @@
 @css3factory.directive "zeroClipboard", ($timeout) ->
   restrict: "A"
 
-  link: ($scope, elem, attrs) ->
+  link: (scope, elem, attrs) ->
     getCodeSampleToCopy = ->
       copyTarget = elem.data("copy-target")
       $(copyTarget).text()

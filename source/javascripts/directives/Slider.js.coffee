@@ -18,14 +18,14 @@
         $scope.activeSwatch.position = ui.value
         $scope.$apply()
 
-  link: ($scope, elem, attrs) ->
+  link: (scope, elem, attrs) ->
     elem.find(".swatch-slider").slider
       max: 100
       range: "min"
-      change: $scope.positionUpdate
-      slide: $scope.positionUpdate
+      change: scope.positionUpdate
+      slide: scope.positionUpdate
 
-    $scope.$watch "activeSwatch.position", (value) ->
+    scope.$watch "activeSwatch.position", (value) ->
       elem.find(".swatch-slider").slider("option", "value", value)
 
     elem.on "focus", ".position-input", ->

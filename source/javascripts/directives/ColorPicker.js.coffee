@@ -7,10 +7,10 @@
       $scope.activeSwatch.rgb = rgb
       $scope.$apply()
 
-  link: ($scope, elem, attrs) ->
+  link: (scope, elem, attrs) ->
     elem.ColorPicker
       flat: true
-      onChange: $scope.updateColor
+      onChange: scope.updateColor
 
-    $scope.$watch "activeSwatch", ->
-      elem.ColorPickerSetColor($scope.activeSwatch.hex)
+    scope.$watch "activeSwatch", ->
+      elem.ColorPickerSetColor(scope.activeSwatch.hex)
