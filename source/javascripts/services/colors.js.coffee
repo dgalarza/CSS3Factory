@@ -1,4 +1,4 @@
-@css3factory.factory "colors", ->
+@css3factory.service "colors", ->
   nextRgbSegment = (color) ->
     if color == 0
       color++
