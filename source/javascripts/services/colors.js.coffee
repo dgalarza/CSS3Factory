@@ -11,17 +11,27 @@
     else
       newColor
 
-  randomColor: ->
-    r: @randomRGB()
-    g: @randomRGB()
-    b: @randomRGB()
+  randomRGB = ->
+    Math.floor(Math.random() *255 ) + 1
 
-  randomRGB: ->
-    Math.floor (Math.random() *255 ) + 1
+  decimalToHex = (decimal) ->
+    hex = decimal.toString(16)
+    if hex.length < 2
+      hex = "0#{hex}"
+
+    hex
+
+  randomColor: ->
+    r: randomRGB()
+    g: randomRGB()
+    b: randomRGB()
 
   rgbToHex: (rgb) ->
-    hex = rgb.b | (rgb.g << 8) | (rgb.r << 16)
-    hex.toString(16)
+    r = decimalToHex(rgb.r)
+    g = decimalToHex(rgb.g)
+    b = decimalToHex(rgb.b)
+
+    "#{r}#{g}#{b}".toUpperCase()
 
   nextColor: (rgb) ->
     r: nextRgbSegment(rgb.r)
