@@ -8,7 +8,7 @@
     hex = colors.rgbToHex(rgb)
 
     new Swatch
-      id: nextSwatchId++
+      id: ++nextSwatchId
       hex: hex
       rgb: rgb
       position: position
