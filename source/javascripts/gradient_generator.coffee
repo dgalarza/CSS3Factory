@@ -9,7 +9,8 @@
 #
 #= require classes/GradientGenerator
 #= require classes/Swatch
-#= require_tree ./services/
+#= require_tree ./services
+#= require_tree ./factories
 #= require_tree ./directives
 #= require controllers/GradientGeneratorCtrl
 
