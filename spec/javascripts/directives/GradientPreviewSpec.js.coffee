@@ -61,4 +61,3 @@ describe "Directive: GradientPreview", ->
     preview = @$compile("<gradient-preview></gradient-preview>")(@$rootScope)
     @$rootScope.$digest()
     preview
-
