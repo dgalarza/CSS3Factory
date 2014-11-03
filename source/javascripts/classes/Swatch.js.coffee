@@ -1,6 +1,6 @@
 class @Swatch
   constructor: (options) ->
-    @hex = options.hex.toUpperCase()
+    @hex = options.hex?.toUpperCase()
     @rgb = options.rgb
     @id = options.id
     @position = options.position
