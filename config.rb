@@ -7,6 +7,8 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
+activate :jasmine
+
 sprockets.append_path File.join root, 'bower_components'
 
 activate :directory_indexes
