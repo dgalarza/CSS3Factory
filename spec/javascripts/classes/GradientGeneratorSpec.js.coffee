@@ -11,7 +11,8 @@ describe "GradientGenerator", ->
         "-o-linear-gradient(bottom, #FFFFFF 100%)",
         "-moz-linear-gradient(bottom, #FFFFFF 100%)",
         "-webkit-linear-gradient(bottom, #FFFFFF 100%)",
-        "-ms-linear-gradient(bottom, #FFFFFF 100%)"
+        "-ms-linear-gradient(bottom, #FFFFFF 100%)",
+        "linear-gradient(to bottom, #FFFFFF 100%)"
       ])
 
     describe "different values for both x and y start and end", ->
@@ -26,7 +27,8 @@ describe "GradientGenerator", ->
           "-o-linear-gradient(right bottom, #FFFFFF 100%)",
           "-moz-linear-gradient(right bottom, #FFFFFF 100%)",
           "-webkit-linear-gradient(right bottom, #FFFFFF 100%)",
-          "-ms-linear-gradient(right bottom, #FFFFFF 100%)"
+          "-ms-linear-gradient(right bottom, #FFFFFF 100%)",
+          "linear-gradient(to right bottom, #FFFFFF 100%)"
         ])
 
     describe "only the y direction is different", ->
@@ -42,6 +44,7 @@ describe "GradientGenerator", ->
           "-moz-linear-gradient(right, #FFFFFF 100%)",
           "-webkit-linear-gradient(right, #FFFFFF 100%)",
           "-ms-linear-gradient(right, #FFFFFF 100%)"
+          "linear-gradient(to right, #FFFFFF 100%)"
         ])
 
   describe "#generateSampleCode", ->

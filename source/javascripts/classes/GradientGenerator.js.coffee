@@ -14,6 +14,8 @@ class @GradientGenerator
     for prefix in @vendorPrefixes
       code.push "-#{prefix}-#{prefixedGradient}"
 
+    code.push @_linearGradient()
+
     code
 
   generateSampleCode: ->
