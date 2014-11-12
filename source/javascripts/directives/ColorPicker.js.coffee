@@ -1,4 +1,4 @@
-@css3factory.directive "colorPicker", ->
+angular.module("css3factory").directive "colorPicker", ->
   restrict: "E"
 
   controller: ($scope) ->

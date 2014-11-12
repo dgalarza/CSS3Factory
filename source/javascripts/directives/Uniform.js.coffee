@@ -1,4 +1,4 @@
-@css3factory.directive "uniform", ->
+angular.module("css3factory").directive "uniform", ->
   restrict: "A"
 
   link: (scope, elem, attrs) ->

@@ -1,4 +1,4 @@
-@css3factory.factory "swatchFactory", (colors) ->
+angular.module("css3factory").factory "swatchFactory", (colors) ->
   nextSwatchId = 0
 
   buildSwatch: (rgb, position) ->

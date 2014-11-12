@@ -1,4 +1,4 @@
-@css3factory.directive "slider", ->
+angular.module("css3factory").directive "slider", ->
   restrict: "E"
 
   template:

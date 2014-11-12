@@ -1,4 +1,4 @@
-@css3factory.directive "gradientCode", (gradientCodeFactory) ->
+angular.module("css3factory").directive "gradientCode", (gradientCodeFactory) ->
   restrict: "E"
   template:
     """

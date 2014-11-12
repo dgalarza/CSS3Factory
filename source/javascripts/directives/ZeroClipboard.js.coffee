@@ -1,4 +1,4 @@
-@css3factory.directive "zeroClipboard", ($timeout) ->
+angular.module("css3factory").directive "zeroClipboard", ($timeout) ->
   restrict: "A"
 
   link: (scope, elem, attrs) ->

@@ -14,4 +14,4 @@
 #= require_tree ./directives
 #= require controllers/GradientGeneratorCtrl
 
-@css3factory = angular.module 'css3factory', []
+angular.module "css3factory", []
