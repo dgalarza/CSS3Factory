@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html ng-app='css3factory'>
+<head>
+<meta charset='UTF-8'>
+<title>
+CSS Gradient Generator
+|
+CSS3 Factory
+</title>
+<link href='/stylesheets/style-335280dc.css' media='screen' rel='stylesheet' type='text/css'>
+<link href='/gradient-favicon-60d1d0f7.png' rel='icon' type='image/png'>
+<meta content='CSS Gradient Generator | CSS3 Factory' property='og:title'>
+<meta content='website' property='og:type'>
+<meta content='http://www.css3factory.com/linear-gradients/' property='og:url'>
+<meta content='CSS3 Factory' property='og:site_name'>
+<meta content='57604055' property='fb:admins'>
+<meta content='The CSS3 Gradient Generator is a showcase for the power of CSS gradients. It also provides a simple graphical user interface for working with CSS webkit gradients, allowing a user preview real time what their gradient will look like and provide the code for the gradient they generated.' property='og:description'>
+<meta content='http://www.css3factory.com/images/og-gradients-b5f06d13.png' property='og:image'>
+<script src='http://use.typekit.com/hyh0moi.js' type='text/javascript'></script>
+<script>
+  try{Typekit.load();}catch(e){}
+</script>
+</head>
+<body class='linear-gradients linear-gradients_index'>
+<div id='page'>
+<header id='site-header'>
+<div class='ad-container wrapper'>
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-1749070472517546" data-ad-slot="8475664483"></ins> 
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<div class='main-header wrapper clearfix'>
+<h1>
+<a href="/"><img src="/images/icons/css3-factory-d2e528c4.png" />
+CSS3 Factory
+</a></h1>
+<div class='social-wrapper'>
+<div class="g-plusone" data-href="http://gradients.glrzad.com"></div>
+<div class='fb-like' data-action='recommend' data-href='http://gradients.glrzad.com/' data-layout='button_count' data-width='90'></div>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-text="#CSS3 Gradient Generator" data-url="http://gradients.glrzad.com" data-via="css3factory">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+</div>
+</div>
+</header>
+<div class='welcome'>
+<div class='wrapper clearfix'>
+<div class='welcome-message'>
+<h2>Same Gradient Generator, With a New Look</h2>
+<p>The coveted CSS3 Gradient Generator has undergone a redesign and moved to its new home within the CSS3 Factory. It has maintained all of it's tools and functions but looks even better now. The redesign enhances the generator's usability and I will be adding even more advanced functions soon.</p>
+</div>
+<div class='callout'>
+<img alt="HTML5 &amp;amp; CSS3 For the Real World" class="book-image" src="/images/html5-css3-real-world-766d520e.png" />
+<div class='book-details'>
+<h4>Featured in</h4>
+<h3>
+<a target="_blank" href="http://www.sitepoint.com/store/html5-css3-for-the-real-world/">HTML5 &amp; CSS3<br />For the Real World</a>
+<p class='authors'>Alexis Goldstein, Louis Lazaris &amp; Estelle Weyl</p>
+</h3>
+</div>
+</div>
+</div>
+</div>
+<section id='generator' ng-controller='GradientGeneratorCtrl'>
+<div class='wrapper' id='generator-wrapper'>
+<header class='clearfix'>
+<h2>CSS Gradient Generator</h2>
+<div class='ad-container'>
+<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px" data-ad-client="ca-pub-1749070472517546" data-ad-slot="9952397682"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</header>
+<div class='swatch-controls control-box'>
+<h3>Color Swatches</h3>
+<color-picker></color-picker>
+<div class='clearfix' id='swatches-container'>
+<a class='add-swatch-btn add-swatch-trigger' href='#addColor' ng-click='addSwatch()'>
+Add
+</a>
+<ul class='swatch-list clearfix'>
+<li class='color-swatch' ng-class='{active: isActiveSwatch(swatch)}' ng-click='activateSwatch(swatch)' ng-repeat='swatch in swatches'>
+<a class='swatch' href='#swatch' ng-style='{ backgroundColor: swatch.hexColor() }'></a>
+<a class='remove-swatch' href='#remove' ng-click='removeSwatch(swatch)'></a>
+</li>
+</ul>
+<div class='color-format'>
+<h3>Color Format</h3>
+<select name='color-format' ng-model='colorFormat' uniform=''>
+<option value='hex'>Hex</option>
+<option value='rgb'>RGB</option>
+</select>
+<p class='notice'>*The selection will be remembered next time.</p>
+</div>
+</div>
+</div>
+<div class='gradient-controls control-box'>
+<h3>Gradient Sample</h3>
+<gradient-preview id='gradient-sample'></gradient-preview>
+<slider></slider>
+<div id='directions'>
+<h3>Gradient Direction</h3>
+<div class='direction-field'>
+<label for='x-start'>X &ndash; Start</label>
+<select class='direction-control' id='x-start' name='x-start' ng-model='gradientDirection.xStart' uniform=''>
+<option selected='selected' value='left'>Left</option>
+<option value='right'>Right</option>
+</select>
+</div>
+<div class='direction-field'>
+<label for='y-start'>Y &ndash; Start</label>
+<select class='direction-control' id='y-start' name='y-start' ng-model='gradientDirection.yStart' uniform=''>
+<option selected='selected' value='top'>Top</option>
+<option value='bottom'>Bottom</option>
+</select>
+</div>
+<div class='direction-field'>
+<label for='x-end'>X &ndash; End</label>
+<select class='direction-control' id='x-end' name='x-end' ng-model='gradientDirection.xEnd' uniform=''>
+<option selected='selected' value='left'>Left</option>
+<option value='right'>Right</option>
+</select>
+</div>
+<div class='direction-field'>
+<label for='y-end'>Y &ndash; End</label>
+<select class='direction-control' id='y-end' name='y-end' ng-model='gradientDirection.yEnd' uniform=''>
+<option value='top'>Top</option>
+<option selected='selected' value='bottom'>Bottom</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<div class='wrapper' id='code'>
+<div class='code-container gradient-code'>
+<h3>Code</h3>
+<a class='copy-trigger copy-link' data-copy-target='.generated-code' href='#copy' title='Copy' zero-clipboard=''>Copy</a>
+<gradient-code class='generated-code'></gradient-code>
+</div>
+</div>
+</section>
+<div id='comments'>
+<div class='wrapper' id='disqus_thread'></div>
+</div>
+
+<footer>
+<div class='wrapper'>
+<ul>
+<li><a class="alt-anchor" href="http://www.damiangalarza.com" target="_blank">Damian Galarza</a></li>
+<li>damian[at]damiangalarza.com</li>
+<li class='last'>
+Follow me on:
+<a class='alt-anchor' href='http://www.facebook.com/dgalarza' target='_blank'>Facebook</a>,
+<a class='alt-anchor' href='http://www.twitter.com/dgalarza' target='_blank'>Twitter</a>,
+<a class='alt-anchor' href='http://www.github.com/dgalarza' target='_blank'>Github</a>
+</li>
+</ul>
+<p class='design-label'>
+Design by:
+<a class='alt-anchor' href='http://www.erinbermudez.com' target='_blank'>Erin Bermudez</a>
+</p>
+</div>
+</footer>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/javascripts/gradient_generator-6f4a7e10.js" type="text/javascript"></script>
+<script type="text/javascript">
+var disqus_shortname = 'glrzad';
+var disqus_url = 'http://www.glrzad.com/css/css3-webkit-gradient-generator/ ';
+var disqus_identifier = '34 http://www.glrzad.com/?p=34';
+
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- END: Page -->
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30333735-1']);
+  _gaq.push(['_trackPageview']);
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=527200053984565";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+</body>
+</html>

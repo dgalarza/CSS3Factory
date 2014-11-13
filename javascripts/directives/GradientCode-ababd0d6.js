@@ -1,0 +1,1 @@
+(function(){this.css3factory.directive("gradientCode",function(t){return{restrict:"E",template:"<pre>{{sampleCode}}</pre>",link:function(e){var r;return r=function(){return e.sampleCode=t.generateCodeSample(e.swatches,e.gradientDirection,e.colorFormat)},e.$watch("swatches",r,!0),e.$watch("gradientDirection",r,!0),e.$watch("colorFormat",r)}}})}).call(this);

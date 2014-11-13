@@ -1,0 +1,1 @@
+(function(){this.css3factory.factory("swatchFactory",function(t){var r;return r=0,{buildSwatch:function(o,n){var a;return o||(o=t.randomColor()),a=t.rgbToHex(o),new Swatch({id:r++,hex:a,rgb:o,position:n})},randomGradientSwatches:function(){var r,o;return r=t.randomColor(),o=t.nextColor(r),[this.buildSwatch(r,0),this.buildSwatch(o,100)]}}})}).call(this);
