@@ -168,4 +168,5 @@ DEPENDENCIES
   middleman-cloudfront
   middleman-livereload (~> 3.1.0)
   middleman-s3_sync
+  uglifier
   wdm (~> 0.1.0)

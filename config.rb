@@ -16,7 +16,10 @@ configure :build do
   activate :minify_javascript
   activate :asset_hash
   activate :gzip
+
+  set :js_compressor, Uglifier.new(mangle: false)
 end
+
 
 activate :s3_sync do |s3_sync|
   s3_sync.bucket                     = ENV['AWS_S3_BUCKET']
