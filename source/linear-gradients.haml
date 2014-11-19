@@ -24,28 +24,28 @@
 .welcome
   .wrapper.clearfix
     .welcome-message
-      %h2 Same Gradient Generator, With a New Look
+      %h3 Same Gradient Generator, With a New Look
       %p The coveted CSS3 Gradient Generator has undergone a redesign and moved to its new home within the CSS3 Factory. It has maintained all of it's tools and functions but looks even better now. The redesign enhances the generator's usability and I will be adding even more advanced functions soon.
 
     .callout
       = image_tag "html5-css3-real-world.png", alt: "HTML5 &amp; CSS3 For the Real World", class: 'book-image'
       .book-details
-        %h4 Featured in
-        %h3
+        %h6 Featured in
+        %h5
           = link_to "HTML5 &amp; CSS3<br />For the Real World", "http://www.sitepoint.com/store/html5-css3-for-the-real-world/", target: '_blank'
           %p.authors Alexis Goldstein, Louis Lazaris &amp; Estelle Weyl
 
 %section#generator{ "ng-controller" => "GradientGeneratorCtrl" }
   #generator-wrapper.wrapper
     %header.clearfix
-      %h2 CSS Gradient Generator
+      %h4 CSS Gradient Generator
       .ad-container
         :plain
           <ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px" data-ad-client="ca-pub-1749070472517546" data-ad-slot="9952397682"></ins>
           <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
     .swatch-controls.control-box
-      %h3 Color Swatches
+      %h5 Color Swatches
 
       %color-picker
 
@@ -58,20 +58,20 @@
             %a.remove-swatch{ href: '#remove', "ng-click" => "removeSwatch(swatch)" }
 
         .color-format
-          %h3 Color Format
+          %h5 Color Format
           %select{ name: 'color-format', "ng-model" => "colorFormat", "uniform" => "" }
             %option{ value: 'hex' } Hex
             %option{ value: 'rgb' } RGB
           %p.notice *The selection will be remembered next time.
 
     .gradient-controls.control-box
-      %h3 Gradient Sample
+      %h5 Gradient Sample
       %gradient-preview#gradient-sample
 
       %slider
 
       #directions
-        %h3 Gradient Direction
+        %h5 Gradient Direction
 
         .direction-field
           %label{ for: 'x-start' } X &ndash; Start
@@ -100,7 +100,7 @@
 
   #code.wrapper
     .code-container.gradient-code
-      %h3 Code
+      %h5 Code
       %a.copy-trigger.copy-link{ href: '#copy', title: "Copy", "zero-clipboard" => "", data: { "copy-target" => ".generated-code" } } Copy
       %gradient-code.generated-code
 

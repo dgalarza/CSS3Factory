@@ -1,32 +1,23 @@
-/**
- * CSS Gradient Generator Styles
- * 
- * 1. Sass Imports
- * 2. General Styles
- * 3. Header
- * 4. Generator Misc
- * 5. Swatches
- */
+@import "bitters/variables";
+@import "compass/reset";
+@import "bourbon/bourbon";
+@import "grid-settings";
+@import "neat/neat";
 
-/** 1. Sass Imports **/
-@import 'compass/css3';
-@import 'compass/reset';
+@import "vendor/uniform.default";
+@import "vendor/jquery-ui-1.10.3.custom";
 
-@import 'vendor/uniform.default';
-@import 'vendor/jquery-ui-1.10.3.custom';
+@import "base/mixins";
+@import "base/typography";
 
-@import 'base/mixins';
-@import 'base/constants';
-@import 'base/typography';
+@import "base/layout";
 
-@import 'base/layout';
+@import "colorpicker";
+@import "colorpicker_overrides";
 
-@import 'colorpicker';
-@import 'colorpicker_overrides';
+@import "components/slider";
+@import "components/uniform";
 
-@import 'components/slider';
-@import 'components/uniform';
+@import "modules/gradient_generator";
 
-@import 'modules/gradient_generator';
-
-@import 'pages/landing';
+@import "pages/landing";

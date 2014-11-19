@@ -25,7 +25,7 @@ input[type=password],
 input[type=url],
 input[type=email],
 textarea {
-  font-size: 12px;
+  font-size: em(12px);
   font-family: "futura-pt", sans-serif;
   color: #898989;
   resize: none;
@@ -34,7 +34,7 @@ textarea {
   padding: 15px 13px 10px 13px;
   @include box-shadow(0 0 5px 0 #e1e1e1 inset);
   @include transition(box-shadow 0.25s linear 0s);
-  &:focus { 
+  &:focus {
     outline: 0 none;
   }
 }
@@ -58,8 +58,7 @@ input[type=text]  {
 }
 
 .wrapper {
-  width:  $page-width - ($page-padding * 2);
-  padding: 0 $page-padding;
+  @include outer-container;
   margin: 0 auto;
 }
 
@@ -97,7 +96,6 @@ footer {
   color: #505050;
   background: #eeeeee;
   text-align: center;
-  font-size: 14px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -111,6 +109,7 @@ footer .wrapper {
 
 footer ul {
   float: left;
+  font-size: em(14px);
   padding-top: 28px;
 }
 
@@ -126,18 +125,19 @@ footer li.last {
 }
 
 footer .design-label {
-  padding-top: 28px;
   float: right;
+  font-size: em(14px);
+  padding-top: 28px;
 }
 
 .clearfix:before,
 .clearfix:after {
-    content: " ";
-    display: table;
+  content: " ";
+  display: table;
 }
 
 .clearfix:after {
-    clear: both;
+  clear: both;
 }
 
 .notice {
