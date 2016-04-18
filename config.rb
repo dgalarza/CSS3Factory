@@ -1,6 +1,8 @@
 require 'dotenv'
 Dotenv.load
 
+activate :es6
+
 set :haml, { :ugly => true, :format => :html5 }
 
 set :css_dir, 'stylesheets'

@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/vast/middleman-es6.git
+  revision: b7964bd199457e930251d9ad3ce00ea6ad70b8d7
+  specs:
+    middleman-es6 (0.1.0)
+      babel-transpiler
+      middleman-core (>= 3.3.12, < 4.0)
+      middleman-sprockets (> 3.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -7,6 +16,10 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bourbon (3.2.3)
       sass (~> 3.2)
       thor
@@ -186,6 +199,7 @@ DEPENDENCIES
   jasmine-core (= 2.0.0)
   middleman (~> 3.3)
   middleman-cloudfront
+  middleman-es6!
   middleman-jasmine (~> 0.5.0)
   middleman-livereload (~> 3.1.0)
   middleman-s3_sync
