@@ -52,10 +52,7 @@
       #swatches-container.clearfix
         %a.add-swatch-btn.add-swatch-trigger{ href: "#addColor", "ng-click" => "addSwatch()" }
           Add
-        %ul.swatch-list.clearfix
-          %li.color-swatch{ "ng-repeat" => "swatch in swatches", "ng-click" => "activateSwatch(swatch)", "ng-class" => "{active: isActiveSwatch(swatch)}" }
-            %a.swatch{ href: '#swatch', "ng-style" => "{ backgroundColor: swatch.hexColor() }" }
-            %a.remove-swatch{ href: '#remove', "ng-click" => "removeSwatch(swatch)" }
+        %react-swatch-list
 
         .color-format
           %h5 Color Format

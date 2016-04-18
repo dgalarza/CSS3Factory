@@ -5,10 +5,13 @@
 #= require vendor/jquery.zclip
 
 #= require angularjs/angular
+#= require react/react
+#= require react/react-dom
 #= require_self
 #
 #= require classes/GradientGenerator
 #= require classes/Swatch
+#= require_tree ./components
 #= require_tree ./services
 #= require_tree ./factories
 #= require_tree ./directives

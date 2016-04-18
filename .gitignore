@@ -4,3 +4,4 @@
 *.swo
 build/
 .env
+bower_components/

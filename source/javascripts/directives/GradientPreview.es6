@@ -7,7 +7,6 @@ window.css3factory.directive("gradientPreview", function(gradientCodeFactory) {
         $scope.colorFormat
       );
 
-
       images.forEach(function(image) {
         elem.css({ backgroundImage: image});
       });

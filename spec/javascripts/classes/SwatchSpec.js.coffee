@@ -3,7 +3,7 @@ describe "Swatch", ->
     it "returns a properly formed hex color value", ->
       swatch = new Swatch(hex: "FFFFFF")
 
-      expect(swatch.hexColor()).toEqual("#FFFFFF")
+      expect(swatch.hexColor).toEqual("#FFFFFF")
 
   describe "#hexColorStop", ->
     it "returns a gradient color stop for the swatch", ->
