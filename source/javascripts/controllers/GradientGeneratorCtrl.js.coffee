@@ -20,9 +20,6 @@
     $scope.swatches.push newSwatch
     $scope.activeSwatch = newSwatch
 
-  $scope.isActiveSwatch = (swatch) ->
-    swatch == $scope.activeSwatch
-
   $scope.$watch "colorFormat", (value) ->
     $.cookie("format", value, expires: 1835)
 

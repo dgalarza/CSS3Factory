@@ -1,9 +1,13 @@
 const SwatchList = React.createClass({
   render: function() {
-    const swatchClick = this.props.swatchClick;
-    const swatchNodes = this.props.swatches.map(function(swatch, index) {
+    const swatchNodes = this.props.swatches.map((swatch, index) => {
       return (
-        <SwatchNode swatchClick={swatchClick} swatch={swatch} key={index}>
+        <SwatchNode
+          swatchClick={this.props.swatchClick}
+          activeSwatch={this.props.activeSwatch}
+          swatch={swatch}
+          key={index}
+        >
         </SwatchNode>
       )
     });
