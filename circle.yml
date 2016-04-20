@@ -2,6 +2,8 @@ dependencies:
   override:
     - bundle install
     - bower install
+  cache_directories:
+    - bower_components/
 test:
   override:
     - bundle exec rake
