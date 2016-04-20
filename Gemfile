@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.3.0"
+
 gem 'bourbon'
 gem 'dotenv'
 gem 'jasmine', "=2.0.0"
