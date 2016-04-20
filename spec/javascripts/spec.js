@@ -4,3 +4,4 @@
 //= require gradient_generator
 //= require angular-mocks/angular-mocks
 //= require_tree .
+//= require react/react-with-addons

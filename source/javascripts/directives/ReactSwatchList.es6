@@ -1,15 +1,10 @@
 window.css3factory.directive("reactSwatchList", function() {
   const link = function($scope, elem, attrs) {
-    function activateSwatch(swatch) {
-      $scope.activateSwatch(swatch);
-      $scope.$apply();
-    }
-
     function renderComponent(swatches, activeSwatch) {
       const props = {
         activeSwatch: activeSwatch,
         swatches: swatches,
-        swatchClick: activateSwatch,
+        swatchClick: $scope.activateSwatch,
       };
 
       ReactDOM.render(

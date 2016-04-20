@@ -67,21 +67,6 @@ describe "Controller: GradientGeneratorCtrl", ->
 
       expect(@scope.activeSwatch).toEqual(swatch)
 
-  describe "$scope.isActiveSwatch", ->
-    beforeEach -> setupController()
-
-    it "returns true when the given swatch is the activeSwatch", ->
-      activeSwatch = { id: "active" }
-      @scope.activeSwatch = activeSwatch
-
-      expect(@scope.isActiveSwatch(activeSwatch)).toBe(true)
-
-    it "returns false when the given swatch is not the activeSwatch", ->
-      activeSwatch = { id: "active" }
-      @scope.activeSwatch = { id: "another-swatch" }
-
-      expect(@scope.isActiveSwatch(activeSwatch)).toBe(false)
-
   describe "$scope.removeSwatch", ->
     beforeEach -> setupController()
 

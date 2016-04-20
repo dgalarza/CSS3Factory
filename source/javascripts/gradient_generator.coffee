@@ -5,7 +5,7 @@
 #= require vendor/jquery.zclip
 
 #= require angularjs/angular
-#= require react/react
+#= require react/react-with-addons
 #= require react/react-dom
 #= require_self
 #
