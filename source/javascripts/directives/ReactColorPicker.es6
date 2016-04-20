@@ -1,13 +1,15 @@
 window.css3factory.directive("reactColorPicker", function() {
-  function link($scope, elem, attrs) {
-    function updateColor(_, hex, rgb) {
-      $scope.activeSwatch.hex = hex;
-      $scope.activeSwatch.rgb = rgb;
-      $scope.$apply();
-    }
+  function controller($scope) {
+    $scope.colorPicked = function(_, hex, rgb) {
+      this.activeSwatch.hex = hex;
+      this.activeSwatch.rgb = rgb;
+      this.$apply();
+    };
+  }
 
+  function link($scope, elem, attrs) {
     const component = ReactDOM.render(
-      React.createElement(ColorPicker, { updateColor: updateColor }),
+      React.createElement(ColorPicker, { updateColor: $scope.colorPicked }),
       elem[0]
     );
 
@@ -18,6 +20,7 @@ window.css3factory.directive("reactColorPicker", function() {
 
   return {
     restrict: "E",
-    link: link
+    link: link,
+    controller: controller,
   };
 });

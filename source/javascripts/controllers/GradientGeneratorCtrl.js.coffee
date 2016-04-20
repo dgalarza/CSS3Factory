@@ -9,6 +9,7 @@
 
   $scope.activateSwatch = (swatch) ->
     $scope.activeSwatch = swatch
+    $scope.$apply()
 
   $scope.removeSwatch = (swatch) ->
     index = $scope.swatches.indexOf(swatch)
